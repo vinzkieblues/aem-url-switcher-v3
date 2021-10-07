@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link href="css/semantic.min.css" rel="stylesheet">
+  <link href="css/main.css" rel="stylesheet">
+  <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="header">
+      <div class="logo"><img src="img/im.png" alt="" /></div>
+      <div class="eight wide column">
+        <div class="ui icon right floating">
+          <button id="login" class="circular button icon ui" data-tooltip="Sign In" data-position="bottom right">
+            <i class="user icon"></i>
+          </button>
+          <button id="logout" class="circular ui icon button" data-tooltip="Sign Out" data-position="bottom right">
+            <i class="sign-out arrow  icon "></i>
+          </button>
+        </div>
+      </div>
+
+    </div>
+    <div class="content">
+      <div class="content__icons">
+        <div class="ui tool-wrap menu small basic icon buttons">
+          <div class="ui" data-tooltip="Admin" data-position="bottom left">
+            <button id="viewAdmin" value="viewadmin" name="viewadmin" class="ui icon button admin-btn icon-btn">
+            </button></div>
+          <div class="ui login-element" data-tooltip="Site Admin" data-position="bottom left">
+            <button id="classicAdminBtn" value="siteadmin" name="siteadmin" class="ui button admin-btn icon-btn">
+            </button></div>
+
+          <div class="ui" data-tooltip="Page Properties" data-position="bottom right">
+            <button id="pageProperties" value="pageproperties" class="ui button prop-btn icon-btn">
+            </button></div>
+
+          <div class="ui" data-tooltip="DAM" data-position="bottom right">
+            <button id="damBtn" value="dam" name="dam" class="ui button tools-btn icon-btn">
+            </button></div>
+
+          <div class="ui login-element" data-tooltip="CRX" data-position="bottom right">
+            <button id="crxBtn" value="crx" name="crx" class="ui button tools-btn icon-btn">
+            </button></div>
+          <div class="ui login-element" data-tooltip="Misc Admin" data-position="bottom right">
+            <button id="miscAdminBtn" name="miscadmin" value="miscadmin" class="ui tools-btn button icon-btn">
+            </button></div>
+
+          <div class="ui login-element" data-tooltip="Event List" data-position="bottom right">
+            <button id="addEvent" target="_blank" class="ui icon button icon-btn add-event">
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="ui form">
+        <p><strong>Open in</strong></p>
+        <div id="tab-option-list" class="inline fields">
+          <div class="field">
+            <input type="radio" name="tab" id="same-tab" value="Same Tab" checked tabindex="0">
+            <label for="same-tab">Same Tab</label>
+          </div>
+          <div class="field">
+            <input type="radio" name="tab" id="new-tab" value="New Tab" tabindex="0">
+            <label for="new-tab">New Tab</label>
+          </div>
+          <div class="field">
+            <input type="radio" name="tab" id="new-window" value="New Window" tabindex="0">
+            <label for="new-window">New Window</label>
+          </div>
+        </div>
+      </div>
+      <div class="switch-container ui form">
+
+        <p><strong>Production</strong></p>
+        <div class="ui buttons fluid"
+          data-content="This will only work if the website exist on the other environment. Otherwise, it will show a 'No Resource Found page'."
+          data-position="top left">
+          <button id="prodAuthor" class="ui button  switch-btn " name="prod64" value="Author">Author</button>
+          <button id="prodViewAsPublished" class="ui button  switch-btn " name="prod64"
+            value="View as Published">VAP</button>
+          <button id="prodPublished" class="ui button  switch-btn " name="prod64" value="Published">Published</button>
+          <button class="ui right live-button button" name="live" value="live" id="liveButton">
+            Live
+          </button>
+        </div>
+
+        <p><strong>Stage</strong></p>
+        <div class="ui buttons fluid">
+          <button id="stageAuthor" class="ui button  switch-btn" name="stage64" value="Author">Author</button>
+          <button id="stageViewAsPublished" class="ui button  switch-btn" name="stage64"
+            value="View as Published">VAP</button>
+          <button id="stagePublished" class="ui button  switch-btn" name="stage64"
+            value="Published">Published</button>
+        </div>
+
+        <p><strong>QA</strong></p>
+        <div class="ui buttons fluid"
+          data-content="This will only work if the website exist on the other environment. Otherwise, it will show a 'No Resource Found page'."
+          data-position="top left">
+          <button id="qaAuthor" class="ui button  switch-btn " name="qa64" value="Author">Author</button>
+          <button id="qaViewAsPublished" class="ui button  switch-btn " name="qa64"
+            value="View as Published">VAP</button>
+          <button id="qaPublished" class="ui button  switch-btn " name="qa64" value="Published">Published</button>
+        </div>
+
+
+
+      </div>
+    </div>
+  </div>
+
+  <div class="ui login-modal basic modal">
+    <div class="ui icon header">
+      <i class="user outline icon primary"></i>
+      Sign in
+    </div>
+    <form id="login-form" class="ui inverted form">
+      <div class="content">
+        <div class="field">
+          <label>Username</label>
+          <input type="text" name="username" placeholder="Username">
+        </div>
+        <div class="field">
+          <label>Password</label>
+          <input type="password" name="password" placeholder="Password">
+        </div>
+        <div class="actions">
+          <button id="submit" class="ui green submit button" type="submit">Sign in</button>
+          <button class="ui button cancel">Close</button>
+          <div class="ui error message"></div>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="ui error-modal basic modal">
+    <div class="ui icon header">
+      <i class="frown outline icon orange"></i>
+      <div class="header__content">
+        Oooooops!
+      </div>
+    </div>
+    <div class="content">
+      <p id="errorMsg">The site list did not contain the live Url for this website.</p>
+    </div>
+    <div class="actions">
+      <button id="addEvent1" target="_blank" class="ui teal right icon ok button add-event login-element">
+        <span id="error-btn-msg">Add Url to the List</span>
+      </button>
+      <button class="ui button cancel inverted">
+        Close
+      </button>
+    </div>
+  </div>
+  <footer>
+    <i class="ui icon exclamation triangle orange"></i>
+    <p>Check to ensure the URLs opened via this tool are correct before using them.</p>
+  </footer>
+  </div>
+
+  <script src="js/vendor/jquery-1.11.2.min.js"></script>
+  <script src="js/vendor/semantic.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="popup.js"></script>
+
+</body>
+
+</html>

@@ -1,1 +1,1 @@
-# aem-url-switcher-v3
+# aem-url-switcher

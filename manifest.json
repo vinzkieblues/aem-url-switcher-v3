@@ -1,0 +1,54 @@
+{
+  "name": "Informa AEM Url Switcher",
+  "version": "3.1",
+  "manifest_version": 3,
+  "description": "Switch AEM URL to Author, View as Published and Published mode.",
+  "permissions": ["activeTab","tabs","declarativeContent","storage"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "16": "/img/icon-16x16.png",
+    "32": "/img/icon-32x32.png",
+    "48": "/img/icon-48x48.png",
+    "128": "/img/icon-128x128.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "/img/icon-16x16.png",
+      "32": "/img/icon-32x32.png",
+      "48": "/img/icon-48x48.png",
+      "128": "/img/icon-128x128.png"
+    }
+  },
+  "commands": {
+    "_execute_action": {
+      "suggested_key": {
+        "default": "Alt+1",
+        "mac": "Command+1"
+      }
+    },
+    "author": {
+      "suggested_key": {
+        "default": "Alt+A",
+        "mac": "Command+A"
+      },
+      "description": "Open Author"
+   },
+   "vap": {
+    "suggested_key": {
+      "default": "Alt+V",
+      "mac": "Command+V"
+    },
+    "description": "Open View as published"
+    },
+    "publish": {
+      "suggested_key": {
+        "default": "Alt+P",
+        "mac": "Command+P"
+      },
+      "description": "Open Published"
+    }
+  }
+}
